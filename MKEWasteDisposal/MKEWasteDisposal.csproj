@@ -218,6 +218,10 @@
     <Compile Include="Migrations\201802061613261_role.Designer.cs">
       <DependentUpon>201802061613261_role.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802061728042_addUserIdTOCustomer.cs" />
+    <Compile Include="Migrations\201802061728042_addUserIdTOCustomer.Designer.cs">
+      <DependentUpon>201802061728042_addUserIdTOCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -336,6 +340,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802061613261_role.resx">
       <DependentUpon>201802061613261_role.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802061728042_addUserIdTOCustomer.resx">
+      <DependentUpon>201802061728042_addUserIdTOCustomer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

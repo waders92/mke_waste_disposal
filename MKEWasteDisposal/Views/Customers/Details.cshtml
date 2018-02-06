@@ -19,11 +19,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Bill.BillId)
+            @Html.DisplayNameFor(model => model.Bill.Amount)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Bill.BillId)
+            @Html.DisplayFor(model => model.Bill.Amount)
         </dd>
 
         <dt>
@@ -60,7 +60,9 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+@if (User.IsInRole("Customer"))
+{
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerID })
+    </p>
+}

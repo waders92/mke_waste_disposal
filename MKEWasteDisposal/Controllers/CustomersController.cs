@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MKEWasteDisposal.Models;
+using Microsoft.AspNet.Identity;
 
 namespace MKEWasteDisposal.Controllers
 {
@@ -32,7 +33,12 @@ namespace MKEWasteDisposal.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = db.Customers.Find(id);
+
+            Customer customer = db.Customers
+                                .Include(c => c.Address)
+                                .Include(c => c.Bill)
+                                .SingleOrDefault(x => x.CustomerID == id);
+            
             if (customer == null)
             {
                 return HttpNotFound();
@@ -57,11 +63,13 @@ namespace MKEWasteDisposal.Controllers
         {
             if (ModelState.IsValid)
             {
+                customer.UserID = User.Identity.GetUserId();
                 db.Customers.Add(customer);
                 db.SaveChanges();
                 TempData["Message"] = "Profile has been saved!";
                 return RedirectToAction("Confirmation");
                 //return RedirectToAction("Index");
+ 
             }
 
             ViewBag.AddressID = new SelectList(db.Addresses, "AddressId", "StreetAddress", customer.AddressID);

@@ -15,6 +15,7 @@ namespace MKEWasteDisposal.Models
         public string LastName { get; set; }
         public string PhoneNumber { get; set; }
         public string PickUpDate { get; set; }
+        public string UserID { get; set; }
 
 
 

@@ -17,11 +17,14 @@
     }
 </div>
 
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+}
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+<table class="table top-buffer">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.FirstName)
@@ -70,11 +73,17 @@
         <td>
             @Html.DisplayFor(modelItem => item.PickUpDate)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CustomerID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CustomerID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CustomerID })
-        </td>
+@if (User.IsInRole("Admin"))
+{
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.CustomerID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.CustomerID })
+    </td>
+}
+    <td>
+        @Html.ActionLink("Details", "Details", new { id = item.CustomerID }) 
+    </td>
+   
     </tr>
 }
 
