@@ -29,5 +29,9 @@ namespace MKEWasteDisposal.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+        public DbSet<Bill> Bills { get; set; }
     }
 }
