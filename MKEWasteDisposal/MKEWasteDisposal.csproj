@@ -201,6 +201,7 @@
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Data\SeedData.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -209,6 +210,14 @@
     <Compile Include="Migrations\201802061430282_InitialMigration.Designer.cs">
       <DependentUpon>201802061430282_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802061543115_RoleTableAdded.cs" />
+    <Compile Include="Migrations\201802061543115_RoleTableAdded.Designer.cs">
+      <DependentUpon>201802061543115_RoleTableAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802061613261_role.cs" />
+    <Compile Include="Migrations\201802061613261_role.Designer.cs">
+      <DependentUpon>201802061613261_role.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -216,6 +225,7 @@
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\RoleViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -292,6 +302,11 @@
     <Content Include="Views\Bills\Details.cshtml" />
     <Content Include="Views\Bills\Edit.cshtml" />
     <Content Include="Views\Bills\Index.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
+    <Content Include="Views\Role\Edit.cshtml" />
+    <Content Include="Views\Role\Details.cshtml" />
+    <Content Include="Views\Role\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -307,6 +322,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201802061430282_InitialMigration.resx">
       <DependentUpon>201802061430282_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802061543115_RoleTableAdded.resx">
+      <DependentUpon>201802061543115_RoleTableAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802061613261_role.resx">
+      <DependentUpon>201802061613261_role.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
