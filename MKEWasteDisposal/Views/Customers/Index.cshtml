@@ -1,10 +1,22 @@
 ﻿@model IEnumerable<MKEWasteDisposal.Models.Customer>
 
-@{
-    ViewBag.Title = "Index";
-}
 
-<h2>Index</h2>
+
+<div class="top-buffer">
+    @using (Html.BeginForm())
+    {
+        <b class="search-box">Pick a day &nbsp;</b><br />
+            @Html.RadioButton("option", "Monday")<text> Monday</text><br />
+            @Html.RadioButton("option", "Tuesday")<text> Tuesday</text><br />
+            @Html.RadioButton("option", "Wednesday")<text> Wednesday</text><br />
+            @Html.RadioButton("option", "Thursday")<text> Thursday</text><br />
+            @Html.RadioButton("option", "Friday")<text> Friday</text><br />
+
+            <b class="search-box">Enter ZipCode: &nbsp;</b>
+            @Html.TextBox("zipCode")<input type="submit" value="Search" />
+    }
+</div>
+
 
 <p>
     @Html.ActionLink("Create New", "Create")

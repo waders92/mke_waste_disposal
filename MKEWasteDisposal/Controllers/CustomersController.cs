@@ -15,8 +15,12 @@ namespace MKEWasteDisposal.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Customers
-        public ActionResult Index()
+        public ActionResult Index(string zipCode, string option)
         {
+            if (!String.IsNullOrEmpty(zipCode))
+            {
+                return View(db.Customers.Include(c => c.Address).Where(x => x.Address.ZipCode.Equals(zipCode) && x.PickUpDate == option).ToList());
+            }
             var customers = db.Customers.Include(c => c.Address).Include(c => c.Bill);
             return View(customers.ToList());
         }
