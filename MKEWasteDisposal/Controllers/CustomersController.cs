@@ -59,7 +59,9 @@ namespace MKEWasteDisposal.Controllers
             {
                 db.Customers.Add(customer);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                TempData["Message"] = "Profile has been saved!";
+                return RedirectToAction("Confirmation");
+                //return RedirectToAction("Index");
             }
 
             ViewBag.AddressID = new SelectList(db.Addresses, "AddressId", "StreetAddress", customer.AddressID);
@@ -135,6 +137,11 @@ namespace MKEWasteDisposal.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult Confirmation()
+        {
+            return View();
         }
     }
 }

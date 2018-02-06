@@ -1,12 +1,19 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 10px;
     padding-bottom: 20px;
+    font-family: 'Lato', sans-serif;
+    background: url(../Content/Images/concrete-texture.png);
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.tag-line {
+    font-family: 'Faster One', cursive;
+    font-size: 60px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -21,4 +28,44 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.icons img {
+    height: 100px;
+}
+
+.bottom-buffer {
+    margin-bottom: 50px;
+}
+
+.top-buffer {
+    margin-top: 50px;
+}
+
+.search-buffer {
+    margin-top: 30px;
+}
+
+.carousel-inner p {
+	font-size: 18px;
+	font-weight: 300;
+    color: #2C943C;
+}
+
+.hidden {
+    display: none;
+}
+
+.search-box {
+    background-color: greenyellow;
+    font-size: 15px;
+}
+
+.clr {
+    clear: both;
+}
+
+.alert-message{
+    background-color: #2C943C;
+    color: white; 
 }

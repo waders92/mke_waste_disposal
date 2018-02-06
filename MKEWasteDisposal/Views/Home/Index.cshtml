@@ -2,30 +2,56 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div class="row top-buffer text-center">
+    <h1 class="tag-line">Milwaukee Waste Disposal</h1>
+</div>
+<div class="row details top-buffer">
+    @*<div id="myCarousel" class="carousel slide text-center" data-ride="carousel" data-interval="3500">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item active">
+                    <p>Green waste disposal for generations to come...</p>
+                </div>
+                <div class="item">
+                    <p>Flexible scheduling options...</p>
+                </div>
+                <div class="item">
+                    <p>Pay online at your conveinence...</p>
+                </div>
+            </div>
+        </div>*@
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+@if (User.IsInRole("Maintenance"))
+{
+    <div class="row top-buffer bottom-buffer">
+        <div class="col-sm-6 col-sm-offset-3 icons text-center">
+            <h3>Check My Route.....</h3>
+            <br />
+            <a href="@Url.Action("Index","Customers")"><img src="~/Content/Images/list.png" style="height: 80px;" /></a>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+}
+
+<div class="row top-buffer bottom-buffer">
+    <div class="col-sm-4 icons text-center">
+        <h2>About us...</h2>
+        <br />
+        <a href="@Url.Action("About","Home")"><img src="~/Content/Images/truck.png" /></a>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <div class="col-sm-4 icons text-center">
+        <h2>Schedule a pickup...</h2>
+        <br />
+        <img src="@Url.Content("~/Content/Images/calendar.png")" style="height: 90px;" />
+    </div>
+    <div class="col-sm-4 icons text-center">
+        <h2>Pay my bill...</h2>
+        <br />
+        <img src="@Url.Content("~/Content/Images/checkout.png")" style="height: 90px;" />
     </div>
 </div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

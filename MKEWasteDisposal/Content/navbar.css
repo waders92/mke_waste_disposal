@@ -1,0 +1,45 @@
+﻿a {
+    color: black;
+    font-weight: 100;
+    font-family: 'Lato', sans-serif;
+    background-color: transparent;
+}
+
+a:hover {
+    color: #2C943C;
+    background-color: transparent;
+}
+
+.navbar-brand {
+     font-family: 'Faster One', cursive;
+}
+
+a.navbar-brand:hover {
+    color: #2C943C;
+    font-size: 3rem;
+    transition: ease-in-out .08s; 
+}
+
+.navbar-default .navbar-brand:hover {
+    color: #2C943C;
+}
+
+.nav > li > a:hover {
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.navbar-default {
+    background-color: transparent;
+    border: none;
+}
+
+.navbar-default a:hover{
+    color: #2C943C;
+    font-weight: bold;
+}
+
+.navbar-default .navbar-nav > li > a:hover{
+    font-weight: bold;
+    color: #2C943C;
+}
