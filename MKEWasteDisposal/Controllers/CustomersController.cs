@@ -119,7 +119,10 @@ namespace MKEWasteDisposal.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = db.Customers.Find(id);
+            Customer customer = db.Customers
+                               .Include(c => c.Address)
+                               .Include(c => c.Bill)
+                               .SingleOrDefault(x => x.CustomerID == id);
             if (customer == null)
             {
                 return HttpNotFound();
@@ -128,6 +131,7 @@ namespace MKEWasteDisposal.Controllers
         }
 
         // POST: Customers/Delete/5
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
