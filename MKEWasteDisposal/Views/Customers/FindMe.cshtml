@@ -24,6 +24,9 @@
         <th>
             @Html.DisplayNameFor(model => model.PickUpDate)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Schedule.PickUpFrequency)
+        </th>
         <th></th>
     </tr>
 
@@ -50,6 +53,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.PickUpDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Schedule.PickUpFrequency)
             </td>
             <td>
                 @Html.ActionLink("Account Overview", "Details", new { id = item.CustomerID }) |

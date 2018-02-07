@@ -20,9 +20,9 @@ namespace MKEWasteDisposal.Controllers
         {
             if (!String.IsNullOrEmpty(zipCode))
             {
-                return View(db.Customers.Include(c => c.Address).Where(x => x.Address.ZipCode.Equals(zipCode) && x.PickUpDate == option).ToList());
+                return View(db.Customers.Include(c => c.Address).Include(c => c.Schedule).Where(x => x.Address.ZipCode.Equals(zipCode) && x.PickUpDate == option).ToList());
             }
-            var customers = db.Customers.Include(c => c.Address).Include(c => c.Bill);
+            var customers = db.Customers.Include(c => c.Address).Include(c => c.Bill).Include(c => c.Schedule);
             return View(customers.ToList());
         }
 
@@ -37,6 +37,7 @@ namespace MKEWasteDisposal.Controllers
             Customer customer = db.Customers
                                 .Include(c => c.Address)
                                 .Include(c => c.Bill)
+                                .Include(c => c.Schedule)
                                 .SingleOrDefault(x => x.CustomerID == id);
 
             if (customer == null)
@@ -53,7 +54,7 @@ namespace MKEWasteDisposal.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            return View(db.Customers.Include(c => c.Address).Where(x => x.UserID == input).ToList());
+            return View(db.Customers.Include(c => c.Address).Include(c=>c.Schedule).Where(x => x.UserID == input).ToList());
         }
 
         // GET: Customers/Create
@@ -61,6 +62,7 @@ namespace MKEWasteDisposal.Controllers
         {
             ViewBag.AddressID = new SelectList(db.Addresses, "AddressId", "StreetAddress");
             ViewBag.BillId = new SelectList(db.Bills, "BillId", "BillId");
+            ViewBag.ScheduleID = new SelectList(db.Schedules, "ScheduleID", "PickUpFrequency");
             return View();
         }
 
@@ -69,7 +71,7 @@ namespace MKEWasteDisposal.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CustomerID,FirstName,LastName,PhoneNumber,PickUpDate,AddressID,BillId")] Customer customer)
+        public ActionResult Create([Bind(Include = "CustomerID,FirstName,LastName,PhoneNumber,PickUpDate,AddressID,BillId,ScheduleID")] Customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -84,6 +86,7 @@ namespace MKEWasteDisposal.Controllers
 
             ViewBag.AddressID = new SelectList(db.Addresses, "AddressId", "StreetAddress", customer.AddressID);
             ViewBag.BillId = new SelectList(db.Bills, "BillId", "BillId", customer.BillId);
+            ViewBag.ScheduleId = new SelectList(db.Schedules, "ScheduleID", "PickUpFrequency", customer.ScheduleId);
             return View(customer);
         }
 
@@ -101,6 +104,7 @@ namespace MKEWasteDisposal.Controllers
             }
             ViewBag.AddressID = new SelectList(db.Addresses, "AddressId", "StreetAddress", customer.AddressID);
             ViewBag.BillId = new SelectList(db.Bills, "BillId", "BillId", customer.BillId);
+            ViewBag.ScheduleId = new SelectList(db.Schedules, "ScheduleID", "PickUpFrequency", customer.ScheduleId);
             return View(customer);
         }
 
@@ -109,7 +113,7 @@ namespace MKEWasteDisposal.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CustomerID,FirstName,LastName,PhoneNumber,PickUpDate,AddressID,BillId")] Customer customer)
+        public ActionResult Edit([Bind(Include = "CustomerID,FirstName,LastName,PhoneNumber,PickUpDate,AddressID,BillId,ScheduleID")] Customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -121,6 +125,7 @@ namespace MKEWasteDisposal.Controllers
             }
             ViewBag.AddressID = new SelectList(db.Addresses, "AddressId", "StreetAddress", customer.AddressID);
             ViewBag.BillId = new SelectList(db.Bills, "BillId", "BillId", customer.BillId);
+            ViewBag.ScheduleId = new SelectList(db.Schedules, "ScheduleID", "PickUpFrequency", customer.ScheduleId);
             return View(customer);
           
         }

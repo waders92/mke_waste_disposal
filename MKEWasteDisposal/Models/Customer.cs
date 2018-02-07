@@ -30,6 +30,10 @@ namespace MKEWasteDisposal.Models
         public int BillId { get; set; }
         public Bill Bill { get; set; }
 
+        [ForeignKey("Schedule")]
+        public int ScheduleId { get; set; }
+        public Schedule Schedule { get; set; }
+
 
 
         public List<Customer> Customers { get; set; }

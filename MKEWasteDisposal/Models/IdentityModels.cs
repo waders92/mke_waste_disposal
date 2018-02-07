@@ -39,5 +39,6 @@ namespace MKEWasteDisposal.Models
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Bill> Bills { get; set; }
+        public DbSet<Schedule> Schedules { get; set; }
     }
 }
