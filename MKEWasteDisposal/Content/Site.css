@@ -85,3 +85,7 @@ textarea {
 .flat-icons a {
     margin: 25px;
 }
+
+.actions p{
+    color: red;
+}
