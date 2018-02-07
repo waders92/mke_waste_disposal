@@ -52,9 +52,9 @@
                 @Html.DisplayFor(modelItem => item.PickUpDate)
             </td>
             <td>
-                @Html.ActionLink("Details", "Details", new { id = item.CustomerID }) |
+                @Html.ActionLink("Account Overview", "Details", new { id = item.CustomerID }) |
                 @Html.ActionLink("Pay Bill", "Details", new { id = item.CustomerID }) |
-                @Html.ActionLink("Hold Pickup", "Details", new { id = item.CustomerID })
+                @Html.ActionLink("Manage Pickups", "Details", new { id = item.CustomerID })
             </td>
 
         </tr>

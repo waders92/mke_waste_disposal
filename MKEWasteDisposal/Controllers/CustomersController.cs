@@ -113,13 +113,16 @@ namespace MKEWasteDisposal.Controllers
         {
             if (ModelState.IsValid)
             {
+                customer.UserID = User.Identity.GetUserId();
                 db.Entry(customer).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                TempData["Message"] = "Profile has been updated!";
+                return RedirectToAction("Confirmation");
             }
             ViewBag.AddressID = new SelectList(db.Addresses, "AddressId", "StreetAddress", customer.AddressID);
             ViewBag.BillId = new SelectList(db.Bills, "BillId", "BillId", customer.BillId);
             return View(customer);
+          
         }
 
         // GET: Customers/Delete/5

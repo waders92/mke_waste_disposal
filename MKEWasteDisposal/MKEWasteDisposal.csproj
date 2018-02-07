@@ -241,6 +241,7 @@
     <Content Include="Content\Images\concrete-texture.png" />
     <Content Include="Content\Images\list.png" />
     <Content Include="Content\Images\natural_paper.png" />
+    <Content Include="Content\Images\pencil.png" />
     <Content Include="Content\Images\truck.png" />
     <Content Include="Content\navbar.css" />
     <Content Include="favicon.ico" />

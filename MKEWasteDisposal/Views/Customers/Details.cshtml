@@ -4,11 +4,17 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2 class="top-buffer">Customer Details</h2>
 
 <div>
-    <h4>Customer</h4>
     <hr />
+    @if (User.IsInRole("Customer"))
+    {
+        <a href="@Url.Action("Edit","Customers", new { id = Model.CustomerID })"><img src="~/Content/Images/pencil.png" style="height: 40px;" /></a>
+        @*<p>
+            @Html.ActionLink("Update Account", "Edit", new { id = Model.CustomerID })
+        </p>*@
+    }
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.FirstName)
@@ -82,12 +88,7 @@
 
     </dl>
 </div>
-@if (User.IsInRole("Customer"))
-{
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerID })
-    </p>
-}
+
 
 
 
