@@ -1,5 +1,6 @@
 ﻿using Microsoft.Owin;
 using Owin;
+using Stripe;
 
 [assembly: OwinStartupAttribute(typeof(MKEWasteDisposal.Startup))]
 namespace MKEWasteDisposal

@@ -115,21 +115,16 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUBB9Y1Zp2XUbMxdoBx59gnumFO9bJfiM"></script>
 <script type="text/javascript">
     $(document).ready(function myMap() {
+        var geocoder = new google.maps.Geocoder();
         var cudahy = new google.maps.LatLng(42.95, -87.86);
         var mapCanvas = document.getElementById("map");
         var mapOptions = { center: cudahy, zoom: 9 };
         var map = new google.maps.Map(mapCanvas, mapOptions);
 
-        var myCity = new google.maps.Circle({
-            center: cudahy,
-            radius: 20000,
-            strokeColor: "#0000ff",
-            strokeopacity: 0.8,
-            strokeWeight: 2,
-            fillColor: "#0000ff",
-            fillOpacity: 0.4
+        var marker = new google.maps.Marker({
+            position: cudahy,
+            map: map
         });
-        myCity.setMap(map);
     });
 </script> 
 
