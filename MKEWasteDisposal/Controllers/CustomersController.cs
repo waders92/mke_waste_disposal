@@ -11,6 +11,7 @@ using Microsoft.AspNet.Identity;
 
 namespace MKEWasteDisposal.Controllers
 {
+   [Authorize]
     public class CustomersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
