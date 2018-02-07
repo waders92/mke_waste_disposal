@@ -9,8 +9,12 @@
 <div>
     <hr />
     @if (User.IsInRole("Customer"))
-    {
-        <a href="@Url.Action("Edit","Customers", new { id = Model.CustomerID })"><img src="~/Content/Images/pencil.png" style="height: 40px;" /></a>
+    {<div class="flat-icons">
+        <p><a href="@Url.Action("Edit","Customers", new { id = Model.CustomerID })"><img src="~/Content/Images/pencil.png" style="height: 40px;" /></a>&nbsp;&nbsp;
+Edit Profile</p>
+         <p><a href="@Url.Action("Edit","Customers", new { id = Model.CustomerID })"><img src="~/Content/Images/dollar-coin-money.png" style="height: 40px;" /></a>&nbsp;&nbsp;&nbsp;Pay Bill:&nbsp;&nbsp;&nbsp;$@Html.DisplayFor(model => model.Bill.Amount)</p>
+    </div>
+       
         @*<p>
             @Html.ActionLink("Update Account", "Edit", new { id = Model.CustomerID })
         </p>*@
