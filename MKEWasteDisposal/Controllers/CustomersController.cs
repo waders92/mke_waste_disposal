@@ -38,12 +38,22 @@ namespace MKEWasteDisposal.Controllers
                                 .Include(c => c.Address)
                                 .Include(c => c.Bill)
                                 .SingleOrDefault(x => x.CustomerID == id);
-            
+
             if (customer == null)
             {
                 return HttpNotFound();
             }
             return View(customer);
+        }
+
+        public ActionResult FindMe(string input)
+        {
+            if (input == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            return View(db.Customers.Include(c => c.Address).Where(x => x.UserID == input).ToList());
         }
 
         // GET: Customers/Create
