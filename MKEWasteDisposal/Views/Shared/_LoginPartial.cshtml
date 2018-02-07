@@ -22,7 +22,7 @@
             }
             @if (User.IsInRole("Customer"))
             {
-               <li> @Html.ActionLink("Profile", "FindMe", "Customers", routeValues: new { input = User.Identity.GetUserId() }, htmlAttributes: new { })</li>
+               <li> @Html.ActionLink("My DashBoard", "FindMe", "Customers", routeValues: new { input = User.Identity.GetUserId() }, htmlAttributes: new { })</li>
             }
             <li>@Html.ActionLink("About", "About", "Home")</li>
             <li>@Html.ActionLink("Contact", "Contact", "Home")</li>

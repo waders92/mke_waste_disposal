@@ -20,4 +20,26 @@
         <strong>Billing:</strong> <a href="mailto:Marketing@example.com">Billing@mwm.com</a>
     </address>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUBB9Y1Zp2XUbMxdoBx59gnumFO9bJfiM"></script>
+<script type="text/javascript">
+    $(document).ready(function myMap() {
+        var cudahy = new google.maps.LatLng(42.95, -87.86);
+        var mapCanvas = document.getElementById("map");
+        var mapOptions = { center: cudahy, zoom: 9 };
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+
+        var myCity = new google.maps.Circle({
+            center: cudahy,
+            radius: 20000,
+            strokeColor: "#0000ff",
+            strokeopacity: 0.8,
+            strokeWeight: 2,
+            fillColor: "#0000ff",
+            fillOpacity: 0.4
+        });
+        myCity.setMap(map);
+    });
+</script>
 <div class="row top-buffer" id="map"></div>

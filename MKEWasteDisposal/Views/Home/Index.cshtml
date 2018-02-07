@@ -1,4 +1,5 @@
-﻿@{
+﻿@using Microsoft.AspNet.Identity
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -46,12 +47,12 @@
     <div class="col-sm-4 icons text-center">
         <h2>Schedule a pickup...</h2>
         <br />
-        <img src="@Url.Content("~/Content/Images/calendar.png")" style="height: 90px;" />
+        <a href="@Url.Action("FindMe", "Customers", routeValues: new { input = User.Identity.GetUserId() })"><img src="@Url.Content("~/Content/Images/calendar.png")" style="height: 90px;" /></a>"
     </div>
     <div class="col-sm-4 icons text-center">
         <h2>Pay my bill...</h2>
         <br />
-        <img src="@Url.Content("~/Content/Images/checkout.png")" style="height: 90px;" />
+        <a href="@Url.Action("FindMe", "Customers", routeValues: new { input = User.Identity.GetUserId() })"><img src="@Url.Content("~/Content/Images/calendar.png")" style="height: 90px;" /></a>"
     </div>
 </div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

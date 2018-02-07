@@ -1,6 +1,7 @@
 ﻿@model IEnumerable < MKEWasteDisposal.Models.Customer >
 
-<table class="table top-buffer">
+<h2 class="top-buffer">Customer Dashboard</h2>
+<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.FirstName)
@@ -50,15 +51,10 @@
             <td>
                 @Html.DisplayFor(modelItem => item.PickUpDate)
             </td>
-            @if (User.IsInRole("Admin"))
-            {
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.CustomerID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.CustomerID })
-                </td>
-            }
             <td>
-                @Html.ActionLink("Details", "Details", new { id = item.CustomerID })
+                @Html.ActionLink("Details", "Details", new { id = item.CustomerID }) |
+                @Html.ActionLink("Pay Bill", "Details", new { id = item.CustomerID }) |
+                @Html.ActionLink("Hold Pickup", "Details", new { id = item.CustomerID })
             </td>
 
         </tr>
