@@ -18,6 +18,8 @@ namespace MKEWasteDisposal.Models
         public string PhoneNumber { get; set; }
         public string PickUpDate { get; set; }
         public string UserID { get; set; }
+        public string BlackOutStart { get; set; }
+        public string BlackOutEnd { get; set; }
 
 
 

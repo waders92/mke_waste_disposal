@@ -48,6 +48,12 @@
             @Html.DisplayNameFor(model => model.PickUpDate)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.BlackOutStart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BlackOutEnd)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Schedule.PickUpFrequency)
         </th>
         <th></th>
@@ -75,6 +81,12 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.PickUpDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BlackOutStart)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BlackOutEnd)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Schedule.PickUpFrequency)

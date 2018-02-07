@@ -241,6 +241,10 @@
     <Compile Include="Migrations\201802071758431_names.Designer.cs">
       <DependentUpon>201802071758431_names.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802072137105_addBlackout.cs" />
+    <Compile Include="Migrations\201802072137105_addBlackout.Designer.cs">
+      <DependentUpon>201802072137105_addBlackout.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -382,6 +386,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802071758431_names.resx">
       <DependentUpon>201802071758431_names.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802072137105_addBlackout.resx">
+      <DependentUpon>201802072137105_addBlackout.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
