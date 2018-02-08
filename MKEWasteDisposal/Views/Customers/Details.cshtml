@@ -25,12 +25,14 @@
                  <article>
                      <label>Amount:  $@Html.DisplayFor(model => model.Bill.Amount)</label>
                  </article>
+                 @{ float amount = Model.Bill.Amount;}
+                 @{ float adjusted = amount * 100;}
                  <script src="//checkout.stripe.com/v2/checkout.js"
                          class="stripe-button"
                          data-key="pk_test_VNP3Y6kttK6FSlY2oh6jhA1O"
                          data-locale="auto"
                          data-description="Garbage Bill"
-                         data-amount="3575">
+                         data-amount="@Html.Raw(adjusted)">
                  </script>
              </form>
          </div>
