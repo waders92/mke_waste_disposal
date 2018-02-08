@@ -114,7 +114,7 @@ namespace MKEWasteDisposal.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CustomerID,FirstName,LastName,PhoneNumber,PickUpDate,AddressID,BillId,ScheduleID")] Customer customer)
+        public ActionResult Edit([Bind(Include = "CustomerID,FirstName,LastName,PhoneNumber,PickUpDate,BlackOutStart,BlackOutEnd,AddressID,BillId,ScheduleID")] Customer customer)
         {
             if (ModelState.IsValid)
             {
