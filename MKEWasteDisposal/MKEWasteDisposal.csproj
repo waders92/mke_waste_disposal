@@ -245,6 +245,18 @@
     <Compile Include="Migrations\201802072137105_addBlackout.Designer.cs">
       <DependentUpon>201802072137105_addBlackout.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802081612159_hasPaid.cs" />
+    <Compile Include="Migrations\201802081612159_hasPaid.Designer.cs">
+      <DependentUpon>201802081612159_hasPaid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802081729574_names1.cs" />
+    <Compile Include="Migrations\201802081729574_names1.Designer.cs">
+      <DependentUpon>201802081729574_names1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802081732581_names2.cs" />
+    <Compile Include="Migrations\201802081732581_names2.Designer.cs">
+      <DependentUpon>201802081732581_names2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -354,7 +366,8 @@
     <Content Include="Views\Schedules\Details.cshtml" />
     <Content Include="Views\Schedules\Edit.cshtml" />
     <Content Include="Views\Schedules\Index.cshtml" />
-    <Content Include="Views\Home\Charge.cshtml" />
+    <Content Include="Views\Customers\Charge.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -391,6 +404,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802072137105_addBlackout.resx">
       <DependentUpon>201802072137105_addBlackout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802081612159_hasPaid.resx">
+      <DependentUpon>201802081612159_hasPaid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802081729574_names1.resx">
+      <DependentUpon>201802081729574_names1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802081732581_names2.resx">
+      <DependentUpon>201802081732581_names2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

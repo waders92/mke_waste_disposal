@@ -26,34 +26,5 @@ namespace MKEWasteDisposal.Controllers
         {
             return View();
         }
-
-        
-        public ActionResult Charge(string stripeEmail, string stripeToken)
-        {
-            StripeConfiguration.SetApiKey("sk_test_d8xKihfN5KOEyRVyM4HLbIVO");
-            var customers = new StripeCustomerService();
-            var charges = new StripeChargeService();
-
-            var customer = customers.Create(new StripeCustomerCreateOptions
-            {
-                Email = stripeEmail,
-                SourceToken = stripeToken
-            });
-
-            var charge = charges.Create(new StripeChargeCreateOptions
-            {
-                Amount = 500,
-                Description = "Sample Charge",
-                Currency = "usd",
-                CustomerId = customer.Id
-            });
-
-            return View();
-        }
-
-        public ActionResult Error()
-        {
-            return View();
-        }
     }
 }

@@ -14,12 +14,21 @@ namespace MKEWasteDisposal.Models
         [Display(Name = "First Name")]
         [Required]
         public string FirstName { get; set; }
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
+        [Display(Name = "Phone")]
         public string PhoneNumber { get; set; }
+        [Display(Name = "Pick Up Day")]
         public string PickUpDate { get; set; }
         public string UserID { get; set; }
+        [Display(Name = "Stop Pickup")]
         public string BlackOutStart { get; set; }
+        [Display(Name = "End Pickup")]
+
         public string BlackOutEnd { get; set; }
+        [Display(Name = "Bill Current?")]
+
+        public bool hasPaid { get; set; }
 
 
 

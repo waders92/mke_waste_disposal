@@ -175,5 +175,37 @@ namespace MKEWasteDisposal.Controllers
         {
             return View();
         }
+
+        public ActionResult Charge(string stripeEmail, string stripeToken)
+        {
+            StripeConfiguration.SetApiKey("sk_test_d8xKihfN5KOEyRVyM4HLbIVO");
+            var customers = new StripeCustomerService();
+            var charges = new StripeChargeService();
+
+            var customer = customers.Create(new StripeCustomerCreateOptions
+            {
+                Email = stripeEmail,
+                SourceToken = stripeToken
+            });
+
+            var charge = charges.Create(new StripeChargeCreateOptions
+            {
+                Amount = 3575,
+                Description = "Garbage Bill",
+                Currency = "usd",
+                CustomerId = customer.Id
+            });
+
+            //Customer updateCustomer = db.Customers.Find(id);
+            //updateCustomer.hasPaid = true; 
+            // update the current user hasPaid to true here
+
+            return View();
+        }
+
+        public ActionResult Error()
+        {
+            return View();
+        }
     }
 }

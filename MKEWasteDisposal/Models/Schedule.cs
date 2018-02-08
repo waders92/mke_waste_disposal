@@ -10,6 +10,7 @@ namespace MKEWasteDisposal.Models
     {
         [Key]
         public int ScheduleID { get; set; }
+        [Display(Name = "Schedule")]
         public string PickUpFrequency { get; set; }
     }
 }
