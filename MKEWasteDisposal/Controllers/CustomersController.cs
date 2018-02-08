@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using MKEWasteDisposal.Models;
 using Microsoft.AspNet.Identity;
+using Stripe;
 
 namespace MKEWasteDisposal.Controllers
 {
