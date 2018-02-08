@@ -27,6 +27,7 @@ namespace MKEWasteDisposal
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/Site.css",
+                      "~/Content/calendar.css",
                       "~/Content/navbar.css"));
         }
     }

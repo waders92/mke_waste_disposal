@@ -260,6 +260,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\calendar.css" />
     <Content Include="Content\Images\calendar.png" />
     <Content Include="Content\Images\change.png" />
     <Content Include="Content\Images\checkout.png" />
@@ -269,6 +270,7 @@
     <Content Include="Content\Images\natural_paper.png" />
     <Content Include="Content\Images\pencil.png" />
     <Content Include="Content\Images\truck.png" />
+    <Content Include="Content\Images\ui-icons_ffffff_256x240.png" />
     <Content Include="Content\navbar.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
