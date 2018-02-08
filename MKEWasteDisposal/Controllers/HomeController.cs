@@ -30,7 +30,7 @@ namespace MKEWasteDisposal.Controllers
         
         public ActionResult Charge(string stripeEmail, string stripeToken)
         {
-            StripeConfiguration.SetApiKey("sk_live_CPjAFRG7f0DK3CWE199Q07L1");
+            StripeConfiguration.SetApiKey("sk_test_d8xKihfN5KOEyRVyM4HLbIVO");
             var customers = new StripeCustomerService();
             var charges = new StripeChargeService();
 
