@@ -64,7 +64,6 @@
                 @Html.DisplayFor(modelItem => item.Schedule.PickUpFrequency)
             </td>
             <td>
-                @*@Html.ActionLink("Account Options", "Details", new { id = item.CustomerID })*@
                 <a href="@Url.Action("Details", "Customers", new { id = item.CustomerID })"><img src="~/Content/Images/account-settings.png" style="height: 20px;" /></a>&nbsp;&nbsp;
                 Account Options
             </td>
