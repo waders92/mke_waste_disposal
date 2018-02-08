@@ -278,6 +278,7 @@
     <Content Include="Content\Images\checkout.png" />
     <Content Include="Content\Images\concrete-texture.png" />
     <Content Include="Content\Images\dollar-coin-money.png" />
+    <Content Include="Content\Images\egg_shell.png" />
     <Content Include="Content\Images\list.png" />
     <Content Include="Content\Images\natural_paper.png" />
     <Content Include="Content\Images\pencil.png" />

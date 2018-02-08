@@ -10,8 +10,8 @@
 <div>
     <hr />
     @if (User.IsInRole("Customer"))
-    {<div class="flat-icons">
-        <div class="col-xs-4 text-center actionss">
+    {<div class="flat-icons bottom-buffer">
+        <div class="col-xs-4 text-center">
             <p>
                 <a href="@Url.Action("Edit", "Customers", new { id = Model.CustomerID })"><img src="~/Content/Images/pencil.png" style="height: 40px;" /></a>&nbsp;&nbsp;
                 Edit Profile
@@ -37,7 +37,7 @@
     </div>
     }
     <br class="clr" />
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal top-buffer">
         <dt>
             @Html.DisplayNameFor(model => model.FirstName)
         </dt>
@@ -159,4 +159,4 @@
     });
 </script> 
 
-<div id="map"></div>
+<div id="map" class="top-buffer"></div>
