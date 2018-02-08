@@ -11,9 +11,10 @@
     {
         <div class="row top-buffer bottom-buffer">
             <div class="col-sm-6 col-sm-offset-3 icons text-center">
-                <h3>Check My Route.....</h3>
+                <h3 class="alert-message">MWD Worker Portal</h3>              
+                <a href="@Url.Action("Index","Customers")"><img src="~/Content/Images/truck2.png" style="height: 90px;" /></a>
                 <br />
-                <a href="@Url.Action("Index","Customers")"><img src="~/Content/Images/list.png" style="height: 80px;" /></a>
+                <h3 class="alert-message">Check My Route.....</h3>
             </div>
         </div>
     }
@@ -33,7 +34,7 @@
             <div class="col-sm-4 icons text-center">
                 <h2>Pay my bill...</h2>
                 <br />
-                <a href="@Url.Action("FindMe", "Customers", routeValues: new { input = User.Identity.GetUserId() })"><img src="@Url.Content("~/Content/Images/dollar-coin-money.png")" style="height: 80px;" /></a>
+                <a href="@Url.Action("FindMe", "Customers", routeValues: new { input = User.Identity.GetUserId() })"><img src="@Url.Content("~/Content/Images/american-dollar-bill.png")" style="height: 85px;" /></a>
             </div>
         </div>
   

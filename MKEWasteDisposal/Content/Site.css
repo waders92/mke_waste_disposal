@@ -41,6 +41,9 @@ textarea {
 .top-buffer {
     margin-top: 50px;
 }
+.work-buffer {
+    margin-top: 25px;
+}
 
 .search-buffer {
     margin-top: 30px;
@@ -57,8 +60,10 @@ textarea {
 }
 
 .search-box {
-    background-color: greenyellow;
-    font-size: 15px;
+    background-color: #6a9a4a;
+    font-size: 16px;
+    font-weight: bolder;
+    color: white;
 }
 
 .clr {
@@ -66,7 +71,7 @@ textarea {
 }
 
 .alert-message{
-    background-color: #2C943C;
+    background-color: #6a9a4a;
     color: white; 
 }
 

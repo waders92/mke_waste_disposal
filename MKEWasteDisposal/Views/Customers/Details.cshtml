@@ -89,24 +89,6 @@
         <dd>
             @Html.DisplayFor(model => model.Address.ZipCode)
         </dd>
-         @if (User.IsInRole("Customer"))
-         {
-            @*<dt>
-                @Html.DisplayNameFor(model => model.Bill.Amount)
-            </dt>
-
-            <dd class="bill-highlight">
-                $@Html.DisplayFor(model => model.Bill.Amount)
-            </dd>*@
-            <dt>
-                @Html.DisplayNameFor(model => model.hasPaid)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.hasPaid)
-            </dd>
-         }
-   
         <dt>
             @Html.DisplayNameFor(model => model.PickUpDate)
         </dt>

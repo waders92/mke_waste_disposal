@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<MKEWasteDisposal.Models.Customer>
 
 
-
-<div class="top-buffer">
-    @using (Html.BeginForm())
-    {
-        <b class="search-box">Pick a day &nbsp;</b><br />
+<div>
+    <div class="top-buffer bottom-buffer col-xs-6">
+        @using (Html.BeginForm())
+        {
+            <b class="search-box">Pick a day &nbsp;</b><br />
             @Html.RadioButton("option", "Monday")<text> Monday</text><br />
             @Html.RadioButton("option", "Tuesday")<text> Tuesday</text><br />
             @Html.RadioButton("option", "Wednesday")<text> Wednesday</text><br />
@@ -14,8 +14,18 @@
 
             <b class="search-box">Enter ZipCode: &nbsp;</b>
             @Html.TextBox("zipCode")<input type="submit" value="Search" />
-    }
+        }
+    </div>
+    <div class="col-xs-6 work-buffer">
+            <div class="col-sm-6 col-sm-offset-3 icons text-center">
+                <h3 class="search-box">MWD Worker Portal</h3>
+                <img src="~/Content/Images/truck2.png" style="height: 90px;" />
+                <br />
+                <h3 class="search-box">Search Customers</h3>
+            </div>
+    </div>
 </div>
+
 
 @if (User.IsInRole("Admin"))
 {
@@ -40,9 +50,6 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Address.ZipCode)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.PickUpDate)
@@ -75,9 +82,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Address.ZipCode)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PhoneNumber)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.PickUpDate)

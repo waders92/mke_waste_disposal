@@ -33,7 +33,8 @@ namespace MKEWasteDisposal.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                TempData["Message"] = "Please login to access that information!";
+                return RedirectToAction("Confirmation");
             }
 
             Customer customer = db.Customers

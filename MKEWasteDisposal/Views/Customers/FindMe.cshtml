@@ -13,9 +13,6 @@
             @Html.DisplayNameFor(model => model.Address.StreetAddress)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Address.City)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Address.ZipCode)
         </th>
         <th>
@@ -49,9 +46,6 @@
                 @Html.DisplayFor(modelItem => item.Address.StreetAddress)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Address.City)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Address.ZipCode)
             </td>
             <td>
@@ -70,9 +64,9 @@
                 @Html.DisplayFor(modelItem => item.Schedule.PickUpFrequency)
             </td>
             <td>
-                @Html.ActionLink("Account Overview", "Details", new { id = item.CustomerID }) |
-                @Html.ActionLink("Pay Bill", "Details", new { id = item.CustomerID }) |
-                @Html.ActionLink("Manage Pickups", "Details", new { id = item.CustomerID })
+                @*@Html.ActionLink("Account Options", "Details", new { id = item.CustomerID })*@
+                <a href="@Url.Action("Details", "Customers", new { id = item.CustomerID })"><img src="~/Content/Images/account-settings.png" style="height: 20px;" /></a>&nbsp;&nbsp;
+                Account Options
             </td>
 
         </tr>
