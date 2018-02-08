@@ -20,7 +20,7 @@
          <div class="col-xs-4 text-center">
              <p><a href="@Url.Action("Edit", "Customers", new { id = Model.CustomerID })"><img src="~/Content/Images/change.png" style="height: 40px;" /></a>&nbsp;&nbsp;&nbsp;Update Pickup Schedule</p>
          </div>
-         <div class="col-xs-4 text-center">
+         <div class="col-xs-4 text-center buffer">
              <form action="/Customers/Charge" method="POST">
                  <article>
                      <label>Amount:  $@Html.DisplayFor(model => model.Bill.Amount)</label>
@@ -91,19 +91,19 @@
         </dd>
          @if (User.IsInRole("Customer"))
          {
-            <dt>
+            @*<dt>
                 @Html.DisplayNameFor(model => model.Bill.Amount)
             </dt>
 
             <dd class="bill-highlight">
                 $@Html.DisplayFor(model => model.Bill.Amount)
-            </dd>
+            </dd>*@
             <dt>
                 @Html.DisplayNameFor(model => model.hasPaid)
             </dt>
 
-            <dd class="bill-highlight">
-                $@Html.DisplayFor(model => model.hasPaid)
+            <dd>
+                @Html.DisplayFor(model => model.hasPaid)
             </dd>
          }
    

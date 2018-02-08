@@ -17,8 +17,8 @@
             </div>
         </div>
     }
-    @if (User.IsInRole("Customer"))
-    {
+   
+ 
         <div class="row top-buffer bottom-buffer">
             <div class="col-sm-4 icons text-center">
                 <h2>About us...</h2>
@@ -28,12 +28,12 @@
             <div class="col-sm-4 icons text-center">
                 <h2>Manage your pickups...</h2>
                 <br />
-                <a href="@Url.Action("FindMe", "Customers", routeValues: new { input = User.Identity.GetUserId() })"><img src="@Url.Content("~/Content/Images/calendar.png")" style="height: 90px;" /></a>"
+                <a href="@Url.Action("FindMe", "Customers", routeValues: new { input = User.Identity.GetUserId() })"><img src="@Url.Content("~/Content/Images/calendar.png")" style="height: 80px;" /></a>"
             </div>
             <div class="col-sm-4 icons text-center">
                 <h2>Pay my bill...</h2>
                 <br />
-                <a href="@Url.Action("FindMe", "Customers", routeValues: new { input = User.Identity.GetUserId() })"><img src="@Url.Content("~/Content/Images/dollar-coin-money.png")" style="height: 90px;" /></a>"
+                <a href="@Url.Action("FindMe", "Customers", routeValues: new { input = User.Identity.GetUserId() })"><img src="@Url.Content("~/Content/Images/dollar-coin-money.png")" style="height: 80px;" /></a>"
             </div>
         </div>
-    }
+  
