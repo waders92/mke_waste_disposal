@@ -1,59 +1,59 @@
 ﻿@using Microsoft.AspNet.Identity
-@{
-    ViewBag.Title = "Home Page";
-}
+    @{
+        ViewBag.Title = "Home Page";
+    }
 
-<div class="row top-buffer text-center">
-    <h1 class="tag-line">Milwaukee Waste Disposal</h1>
-</div>
-<div class="row details top-buffer">
-    @*<div id="myCarousel" class="carousel slide text-center" data-ride="carousel" data-interval="3500">
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="item active">
-                    <p>Green waste disposal for generations to come...</p>
+    <div class="row top-buffer text-center">
+        <h1 class="tag-line">Milwaukee Waste Disposal</h1>
+    </div>
+    <div class="row details top-buffer">
+        @*<div id="myCarousel" class="carousel slide text-center" data-ride="carousel" data-interval="3500">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <p>Green waste disposal for generations to come...</p>
+                    </div>
+                    <div class="item">
+                        <p>Flexible scheduling options...</p>
+                    </div>
+                    <div class="item">
+                        <p>Pay online at your conveinence...</p>
+                    </div>
                 </div>
-                <div class="item">
-                    <p>Flexible scheduling options...</p>
-                </div>
-                <div class="item">
-                    <p>Pay online at your conveinence...</p>
-                </div>
+            </div>*@
+    </div>
+
+    @if (User.IsInRole("Maintenance"))
+    {
+        <div class="row top-buffer bottom-buffer">
+            <div class="col-sm-6 col-sm-offset-3 icons text-center">
+                <h3>Check My Route.....</h3>
+                <br />
+                <a href="@Url.Action("Index","Customers")"><img src="~/Content/Images/list.png" style="height: 80px;" /></a>
             </div>
-        </div>*@
-</div>
-
-@if (User.IsInRole("Maintenance"))
-{
-    <div class="row top-buffer bottom-buffer">
-        <div class="col-sm-6 col-sm-offset-3 icons text-center">
-            <h3>Check My Route.....</h3>
-            <br />
-            <a href="@Url.Action("Index","Customers")"><img src="~/Content/Images/list.png" style="height: 80px;" /></a>
         </div>
-    </div>
-}
-@if (User.IsInRole("Customer"))
-{
-    <div class="row top-buffer bottom-buffer">
-        <div class="col-sm-4 icons text-center">
-            <h2>About us...</h2>
-            <br />
-            <a href="@Url.Action("About","Home")"><img src="~/Content/Images/truck.png" /></a>
+    }
+    @if (User.IsInRole("Customer"))
+    {
+        <div class="row top-buffer bottom-buffer">
+            <div class="col-sm-4 icons text-center">
+                <h2>About us...</h2>
+                <br />
+                <a href="@Url.Action("About","Home")"><img src="~/Content/Images/truck.png" /></a>
+            </div>
+            <div class="col-sm-4 icons text-center">
+                <h2>Schedule a pickup...</h2>
+                <br />
+                <a href="@Url.Action("FindMe", "Customers", routeValues: new { input = User.Identity.GetUserId() })"><img src="@Url.Content("~/Content/Images/calendar.png")" style="height: 90px;" /></a>"
+            </div>
+            <div class="col-sm-4 icons text-center">
+                <h2>Pay my bill...</h2>
+                <br />
+                <a href="@Url.Action("FindMe", "Customers", routeValues: new { input = User.Identity.GetUserId() })"><img src="@Url.Content("~/Content/Images/calendar.png")" style="height: 90px;" /></a>"
+            </div>
         </div>
-        <div class="col-sm-4 icons text-center">
-            <h2>Schedule a pickup...</h2>
-            <br />
-            <a href="@Url.Action("FindMe", "Customers", routeValues: new { input = User.Identity.GetUserId() })"><img src="@Url.Content("~/Content/Images/calendar.png")" style="height: 90px;" /></a>"
-        </div>
-        <div class="col-sm-4 icons text-center">
-            <h2>Pay my bill...</h2>
-            <br />
-            <a href="@Url.Action("FindMe", "Customers", routeValues: new { input = User.Identity.GetUserId() })"><img src="@Url.Content("~/Content/Images/calendar.png")" style="height: 90px;" /></a>"
-        </div>
-    </div>
-}
+    }

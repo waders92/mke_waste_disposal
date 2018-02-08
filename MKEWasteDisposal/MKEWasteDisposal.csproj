@@ -254,13 +254,13 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\RoleViewModel.cs" />
     <Compile Include="Models\Schedule.cs" />
+    <Compile Include="Models\StripeSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\calendar.css" />
     <Content Include="Content\Images\calendar.png" />
     <Content Include="Content\Images\change.png" />
     <Content Include="Content\Images\checkout.png" />
@@ -355,6 +355,7 @@
     <Content Include="Views\Schedules\Edit.cshtml" />
     <Content Include="Views\Schedules\Index.cshtml" />
     <Content Include="Views\Home\Charge.cshtml" />
+    <Content Include="Views\Bills\Charge.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

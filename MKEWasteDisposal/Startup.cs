@@ -1,4 +1,5 @@
 ﻿using Microsoft.Owin;
+using MKEWasteDisposal.Models;
 using Owin;
 using Stripe;
 

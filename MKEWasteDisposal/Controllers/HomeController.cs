@@ -27,8 +27,10 @@ namespace MKEWasteDisposal.Controllers
             return View();
         }
 
+
         public ActionResult Charge(string stripeEmail, string stripeToken)
         {
+            StripeConfiguration.SetApiKey("sk_live_CPjAFRG7f0DK3CWE199Q07L1");
             var customers = new StripeCustomerService();
             var charges = new StripeChargeService();
 
@@ -46,6 +48,11 @@ namespace MKEWasteDisposal.Controllers
                 CustomerId = customer.Id
             });
 
+            return View();
+        }
+
+        public ActionResult Error()
+        {
             return View();
         }
     }
