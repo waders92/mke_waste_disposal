@@ -37,22 +37,23 @@
         </div>
     </div>
 }
-
-<div class="row top-buffer bottom-buffer">
-    <div class="col-sm-4 icons text-center">
-        <h2>About us...</h2>
-        <br />
-        <a href="@Url.Action("About","Home")"><img src="~/Content/Images/truck.png" /></a>
+@if (User.IsInRole("Customer"))
+{
+    <div class="row top-buffer bottom-buffer">
+        <div class="col-sm-4 icons text-center">
+            <h2>About us...</h2>
+            <br />
+            <a href="@Url.Action("About","Home")"><img src="~/Content/Images/truck.png" /></a>
+        </div>
+        <div class="col-sm-4 icons text-center">
+            <h2>Schedule a pickup...</h2>
+            <br />
+            <a href="@Url.Action("FindMe", "Customers", routeValues: new { input = User.Identity.GetUserId() })"><img src="@Url.Content("~/Content/Images/calendar.png")" style="height: 90px;" /></a>"
+        </div>
+        <div class="col-sm-4 icons text-center">
+            <h2>Pay my bill...</h2>
+            <br />
+            <a href="@Url.Action("FindMe", "Customers", routeValues: new { input = User.Identity.GetUserId() })"><img src="@Url.Content("~/Content/Images/calendar.png")" style="height: 90px;" /></a>"
+        </div>
     </div>
-    <div class="col-sm-4 icons text-center">
-        <h2>Schedule a pickup...</h2>
-        <br />
-        <a href="@Url.Action("FindMe", "Customers", routeValues: new { input = User.Identity.GetUserId() })"><img src="@Url.Content("~/Content/Images/calendar.png")" style="height: 90px;" /></a>"
-    </div>
-    <div class="col-sm-4 icons text-center">
-        <h2>Pay my bill...</h2>
-        <br />
-        <a href="@Url.Action("FindMe", "Customers", routeValues: new { input = User.Identity.GetUserId() })"><img src="@Url.Content("~/Content/Images/calendar.png")" style="height: 90px;" /></a>"
-    </div>
-</div>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+}
