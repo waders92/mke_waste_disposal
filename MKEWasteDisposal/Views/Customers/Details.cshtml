@@ -8,7 +8,6 @@
 <h2 class="top-buffer">Customer Details</h2>
 
 <div>
-    <hr />
     @if (User.IsInRole("Customer"))
     {<div class="flat-icons bottom-buffer">
         <div class="col-xs-4 text-center">
@@ -142,5 +141,7 @@
         });
     });
 </script> 
-
-<div id="map" class="top-buffer"></div>
+@if (User.IsInRole("Maintenance"))
+{
+    <div id="map" class="top-buffer"></div>
+}

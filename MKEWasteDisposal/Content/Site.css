@@ -12,7 +12,8 @@
 }
 
 .tag-line {
-    font-family: 'Faster One', cursive;
+    font-family: 'Faster One', 'Lucida Sans';
+    /*font-family: 'Lucida Sans';*/
     font-size: 60px;
 }
 

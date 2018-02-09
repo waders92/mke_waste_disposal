@@ -15,6 +15,14 @@
             <b class="search-box">Enter ZipCode: &nbsp;</b>
             @Html.TextBox("zipCode")<input type="submit" value="Search" />
         }
+
+        @if (User.IsInRole("Admin"))
+        {
+            <p class="top-buffer">
+                @Html.ActionLink("Create New", "Create")
+            </p>
+        }
+
     </div>
     <div class="col-xs-6 work-buffer">
             <div class="col-sm-6 col-sm-offset-3 icons text-center">
@@ -27,14 +35,8 @@
 </div>
 
 
-@if (User.IsInRole("Admin"))
-{
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-}
-
 <table class="table top-buffer">
+
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.FirstName)
