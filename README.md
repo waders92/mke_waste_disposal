@@ -1,6 +1,7 @@
 # mke_waste_disposal
 
-DevCodeCamp project
+**DevCodeCamp Project**
+
 Web Application built using ASP.NET, MVC5 and the Entity Framework
 - Database created in a "code-first" approach
 - Customers sign up for trash collection services and can modify pick-ups
